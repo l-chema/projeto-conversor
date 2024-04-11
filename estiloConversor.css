@@ -1,0 +1,20 @@
+input, select, button /* é possível estilizar tags diferentes ao mesmo tempo, separando cada tag por vírgula */  {
+    padding: 10px; /* padding cria um espaço dentro do elemento */
+}
+
+.container {
+    border: 1px solid #aaa;
+    padding: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#titulo {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#resultado {
+    margin-top: 50px;
+}
+

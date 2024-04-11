@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Moedas</title>
+    <link rel="stylesheet" href="estiloConversor.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="titulo">Conversor de Moedas</h1>
+        <input type="number" id="valor-usuario" placeholder="Insira o valor aqui">
+        <select name="moeda1" id="moeda1">
+            <option value="dolar">Dólar</option>
+            <option value="euro">Euro</option>
+            <!-- <option value="franco">Franco Suíço</option> -->
+            <!-- <option value="libra">Libra</option> -->
+            <option value="real" selected>Real</option>
+        </select>
+        <button onclick="inverter();">Inverter</button>
+        <select name="moeda2" id="moeda2">
+            <option value="dolar" selected>Dólar</option>
+            <option value="euro">Euro</option>
+            <!-- <option value="franco">Franco Suíço</option> -->
+            <!-- <option value="libra">Libra</option> -->
+            <option value="real">Real</option>
+        </select>
+        <button onclick="converter();">Converter</button>
+        <button onclick="limpar();">Limpar</button>
+        <p id="resultado">Resultado:</p>
+    </div>
+
+    <script src="conversorMoedas.js"></script>
+</body>
+</html>
