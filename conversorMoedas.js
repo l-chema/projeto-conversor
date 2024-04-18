@@ -31,6 +31,24 @@ let valoresConversao = {
     }
 };
 
+let botaoConverter = document.getElementById("botao-converter");
+botaoConverter.addEventListener("click", converter);
+
+
+let botaoLimpar = document.getElementById("botao-limpar");
+botaoLimpar.addEventListener("click", limpar);
+
+let botaoInverter = document.getElementById("botao-inverter");
+botaoInverter.addEventListener("click", inverter);
+
+let botaoAceitaMensagem = document.getElementById("aceita-mensagem-usuario");
+botaoAceitaMensagem.addEventListener("click", aceitaMensagem);
+
+if(localStorage.getItem("aceitouCookie") == "1"){
+    aceitaMensagem;
+}
+
+
 let valorUsuario = document.getElementById("valor-usuario");
 valorUsuario.addEventListener("keypress", function(event) {
 
@@ -77,7 +95,14 @@ function converter() {
     let paragrafoResultado = document.getElementById("resultado");
     paragrafoResultado.textContent = simbolo + " " + conversao.toFixed(2);
 
-    console.log(conversao);
+    let resultadoDaConversao = {
+        valor: valorUsuario,
+        moeda1: moedaOrigem,
+        moeda2: moedaDestino,
+        resultado: conversao
+    }
+
+    salvaResultadoNoHistorico(resultadoDaConversao)
 }
 
 function inverter() {
@@ -94,4 +119,24 @@ function limpar() {
 
     valorUsuario.value = "";
     resultado.textContent = "";
+}
+
+function salvaResultadoNoHistorico(conversao) {
+    let conversaoEmJson = JSON.stringify(conversao);
+    localStorage.setItem("historico", conversao);
+}
+
+function aceitaMensagem() {
+    let divMensagemUsuario = document.getElementById("container-mensagem-usuario");
+    divMensagemUsuario.classList.add("oculto");
+
+    localStorage.setItem("aceitouCookie", "1");
+}
+
+function recuperaHistoricoDeConversao{
+    let historico = localStorage.getItem("historico");
+    let historicoConvertido = JSON.parse(historico);
+
+    console.log(historicoConvertido);
+    
 }
