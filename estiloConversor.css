@@ -9,6 +9,21 @@ input, select, button /* é possível estilizar tags diferentes ao mesmo tempo, 
     margin-top: 50px;
 }
 
+.mensagem-usuario {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #d9d9d9;
+    text-align: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.oculto {
+    display: none;
+}
+
 #titulo {
     margin-top: 50px;
     margin-bottom: 50px;
