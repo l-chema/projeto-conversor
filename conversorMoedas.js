@@ -64,6 +64,9 @@ valorUsuario.addEventListener("keypress", function(event) {
 });
 
 function converter() {
+    
+    buscaAPI();
+
     let valorUsuario = document.getElementById("valor-usuario").value;
 
     let moedaOrigem = document.getElementById("moeda1").value;
@@ -138,7 +141,7 @@ function aceitaMensagem() {
     localStorage.setItem("aceitouCookie", "1");
 }
 
-function recuperaHistoricoDeConversoes {
+function recuperaHistoricoDeConversoes() {
     let historico = localStorage.getItem("historico");
     
     if(!historico){
@@ -149,4 +152,14 @@ function recuperaHistoricoDeConversoes {
     return historicoConvertido;
     console.log(historicoConvertido);
     
+}
+
+function buscaAPI() {
+    let url = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
+    fetch(url).then(function(data){
+        if(data.status == 200) {
+            console.log("deu tudo certo")
+        }
+        console.log(data)
+    }).catch()
 }

@@ -2,11 +2,19 @@ input, select, button /* é possível estilizar tags diferentes ao mesmo tempo, 
     padding: 10px; /* padding cria um espaço dentro do elemento */
 }
 
+body {
+    background-color: #cddbe7;
+}
+
 .container {
-    border: 1px solid #aaa;
+    background-color: #b4c3cf;
+    width: 700px;
     padding: 50px;
     text-align: center;
     margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
 }
 
 .mensagem-usuario {
@@ -23,13 +31,26 @@ input, select, button /* é possível estilizar tags diferentes ao mesmo tempo, 
 .oculto {
     display: none;
 }
+button, input, select {
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+}
 
+button:hover {
+    cursor: pointer;
+    background-color: #96aec2;
+    color: white;
+}
 #titulo {
     margin-top: 50px;
     margin-bottom: 50px;
+    font-family: "Poppins", sans-serif;
 }
 
 #resultado {
     margin-top: 50px;
+    font-family: "Poppins", sans-serif;
 }
 
