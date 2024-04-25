@@ -122,8 +122,13 @@ function limpar() {
 }
 
 function salvaResultadoNoHistorico(conversao) {
-    let conversaoEmJson = JSON.stringify(conversao);
-    localStorage.setItem("historico", conversao);
+    let historico = recuperaHistoricoDeConversoes ();
+
+    historico.push(conversao);
+
+    let conversaoEmJson = JSON.stringify(historico);
+    console.log(conversaoEmJson)
+    localStorage.setItem("historico", historico);
 }
 
 function aceitaMensagem() {
@@ -133,10 +138,15 @@ function aceitaMensagem() {
     localStorage.setItem("aceitouCookie", "1");
 }
 
-function recuperaHistoricoDeConversao{
+function recuperaHistoricoDeConversoes {
     let historico = localStorage.getItem("historico");
+    
+    if(!historico){
+        console.log("historico está vazio")
+        return [];
+    }
     let historicoConvertido = JSON.parse(historico);
-
+    return historicoConvertido;
     console.log(historicoConvertido);
     
 }
