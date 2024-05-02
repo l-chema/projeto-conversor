@@ -65,7 +65,12 @@ valorUsuario.addEventListener("keypress", function(event) {
 
 function converter() {
     
-    buscaAPI();
+    buscaAPI(moedaOrigem, moedaDestino).then(function(response){
+        let objetoRetorno = JSON.parse(data);
+
+        console.log(data);
+    });
+    return;
 
     let valorUsuario = document.getElementById("valor-usuario").value;
 
@@ -154,9 +159,9 @@ function recuperaHistoricoDeConversoes() {
     
 }
 
-function buscaAPI() {
-    let url = "https://economia.awesomeapi.com.br/json/last/USD-BRL";
-    fetch(url).then(function(data){
+function buscaAPI(moedaOrigem="USD", moedaDestino="BRL") {
+    let url = "https://economia.awesomeapi.com.br/json/last/USD-BRL" + parametro;
+    return fetch(url).then(function(data){
         if(data.status == 200) {
             console.log("deu tudo certo")
         }
