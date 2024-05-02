@@ -74,7 +74,7 @@ function converter() {
 
     let conversao = valorUsuario * valoresConversao[moedaOrigem][moedaDestino];
 
-    if(valorUsuario == ""){
+    /*if(valorUsuario == ""){
         alert("O valor não pode ser vazio!");
         return;
     }
@@ -94,7 +94,7 @@ function converter() {
     if(moedaDestino == "euro"){
         simbolo = "€";
     }
-
+    */
     let paragrafoResultado = document.getElementById("resultado");
     paragrafoResultado.textContent = simbolo + " " + conversao.toFixed(2);
 
@@ -160,6 +160,12 @@ function buscaAPI() {
         if(data.status == 200) {
             console.log("deu tudo certo")
         }
-        console.log(data)
+        return data.json();
+        //console.log(data)
+    }).then(function(response){
+        console.log(response);
+        console.log(response["USDBRL"]["ask"]);
+        return response["USDBRL"]["ask"];
+
     }).catch()
 }
